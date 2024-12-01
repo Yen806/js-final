@@ -104,7 +104,7 @@ function changeOrderState(status, id) {
 function deleteOrder(id) {
     axios.delete(`${baseUrl}api/livejs/v1/admin/${apiPath}/orders/${id}`, header)
         .then((response) => {
-            alert("刪除品項成功");
+            alert("刪除訂單成功");
             getOrderList();
         })
         .catch((error) => {
