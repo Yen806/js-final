@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const ele = document.querySelector('.recommendation-wall');
     ele.style.cursor = 'grab';
     let pos = { top: 0, left: 0, x: 0, y: 0 };
-    const mouseDownHandler = function(e) {
+    const mouseDownHandler = function (e) {
         ele.style.cursor = 'grabbing';
         ele.style.userSelect = 'none';
 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('mousemove', mouseMoveHandler);
         document.addEventListener('mouseup', mouseUpHandler);
     };
-    const mouseMoveHandler = function(e) {
+    const mouseMoveHandler = function (e) {
         // How far the mouse has been moved
         const dx = e.clientX - pos.x;
         const dy = e.clientY - pos.y;
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ele.scrollTop = pos.top - dy;
         ele.scrollLeft = pos.left - dx;
     };
-    const mouseUpHandler = function() {
+    const mouseUpHandler = function () {
         ele.style.cursor = 'grab';
         ele.style.removeProperty('user-select');
 
@@ -47,9 +47,9 @@ linkBtn.forEach((item) => {
 })
 
 function menuToggle() {
-    if(menu.classList.contains('openMenu')) {
+    if (menu.classList.contains('openMenu')) {
         menu.classList.remove('openMenu');
-    }else {
+    } else {
         menu.classList.add('openMenu');
     }
 }
